@@ -30,7 +30,7 @@
 				"check",
 				"run"
 			],
-			"default": "guessing_game"
+			"default": "run"
 		}
 	]
 }
