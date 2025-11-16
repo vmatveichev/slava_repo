@@ -6,13 +6,19 @@
 			"problemMatcher": [
 				"$rustc"
 			],
-			"command": "cargo ${input:command} --manifest-path ./rust/cargo/${input:proj}/Cargo.toml",
-			"label": "rust: cargo"
+			"command": "cargo ${input:command} --manifest-path ./rust/cargo/${input:rust_proj}/Cargo.toml",
+			"label": "Slava: cargo"
+		},
+		{
+			"type": "shell",
+			"problemMatcher": [],
+			"command": "go ${input:command} ./go/main.go",
+			"label": "Slava: go"
 		}
 	],
 	"inputs": [
 		{
-			"id": "proj",
+			"id": "rust_proj",
 			"description": "Rust proj",
 			"type": "pickString",
 			"options": [
@@ -23,7 +29,7 @@
 		},
 		{
 			"id": "command",
-			"description": "cargo command",
+			"description": "exec command",
 			"type": "pickString",
 			"options": [
 				"build",

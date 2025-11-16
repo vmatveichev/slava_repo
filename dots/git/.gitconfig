@@ -2,3 +2,5 @@
 [user]
 	name = Viacheslav Matveichev
 	email = viacheslav.matveichev@gmail.com
+[core]
+	editor = code --wait
