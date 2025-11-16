@@ -12,8 +12,8 @@
 		{
 			"type": "shell",
 			"problemMatcher": [],
-			"command": "go ${input:command} ./go/main.go",
-			"label": "Slava: go"
+			"command": "go run ./go/*",
+			"label": "Slava: go run"
 		}
 	],
 	"inputs": [
