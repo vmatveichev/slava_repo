@@ -26,6 +26,7 @@ func task3() {
 
 func task4() {
 	var age int
+	fmt.Print("Enter your age: ")
 
 	if _, err := fmt.Scan(&age); err != nil {
 		fmt.Println("Invalid input!")
