@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 	"sync"
 	"time"
 )
@@ -21,19 +22,18 @@ func (p *Product) discount(percent float64) {
 		fmt.Println("Invalid discount percent")
 		return
 	}
-	p.Price *= (100 - percent) / 100
+	p.Price *= 1 - percent/100
 }
 
 func sliceDemo() {
 	slice := []int{10, 20, 30}
-	slice = append(slice, 40, 50)
 
 	for i, v := range slice {
 		fmt.Printf("Index: %d, Value: %d\n", i, v)
 	}
 	fmt.Printf("Slice length: %d, capacity: %d\n", len(slice), cap(slice))
 	slice = append(slice, 40, 50)
-	fmt.Printf("After appending more elements - Slice length: %d, capacity: %d\n", len(slice), cap(slice))
+	fmt.Printf("After appending - Slice length: %d, capacity: %d\n", len(slice), cap(slice))
 }
 
 func mapDemo() {
@@ -93,7 +93,7 @@ func productDemo() {
 	}
 
 	for i := range products {
-		if products[i].Name == product {
+		if strings.EqualFold(products[i].Name, product) {
 			products[i].discount(discount)
 			fmt.Printf("After %.2f%% discount:\n", discount)
 			products[i].info()
@@ -112,7 +112,7 @@ func runInParallel() {
 		go func(id int) {
 			defer wg.Done()
 			d := time.Duration(rand.Intn(1000)) * time.Millisecond
-			fmt.Printf("Task %d is running for %d sec\n", id, d.Milliseconds())
+			fmt.Printf("Task %d is running for %d ms\n", id, d.Milliseconds())
 			time.Sleep(d)
 		}(i)
 	}
