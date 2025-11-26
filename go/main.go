@@ -4,8 +4,10 @@ import "fmt"
 
 func main() {
 	fmt.Println("Hello, Go!")
-	fmt.Println()
-	lesson2()
-	fmt.Println()
-	lesson3()
+	// fmt.Println()
+	// lesson2()
+	// fmt.Println()
+	// lesson3()
+	// fmt.Println()
+	lesson4()
 }
